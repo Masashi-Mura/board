@@ -42,7 +42,7 @@ public class BoardController {
 	* 一覧を設定する。
 	*
 	* @param model モデル
-	* @return 一覧を設定したモデル
+	* @return 一覧を設定したモデルModel
 	*/
 	private Model setList(Model model) {
 		Iterable<Post> list = repository.findByDeletedFalseOrderByUpdatedDateDesc();
@@ -58,10 +58,6 @@ public class BoardController {
 	* @return テンプレート
 	*/
 	@RequestMapping(value = "/create", method = RequestMethod.POST)
-	//public String create(@ModelAttribute("form") Post form, BindingResult result,
-	//		Model model) {
-	//public String create(@ModelAttribute("form") @Validated Post form,
-	//		BindingResult result, Model model) {
 	public String create(@ModelAttribute("form") @Validated(GroupOrder.class) Post form,
 			BindingResult result, Model model) {
 		if (!result.hasErrors()) {
@@ -97,9 +93,6 @@ public class BoardController {
 	* @return テンプレート
 	*/
 	@RequestMapping(value = "/update", method = RequestMethod.POST)
-	//public String update(@ModelAttribute("form") Post form, Model model) {
-	//public String update(@ModelAttribute("form") @Validated Post form,
-	//		BindingResult result, Model model) {
 	public String update(@ModelAttribute("form") @Validated(GroupOrder.class) Post form,
 			BindingResult result, Model model) {
 

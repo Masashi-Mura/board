@@ -15,7 +15,7 @@ public class PostFactory {
 	/**
 	* 新規の投稿を生成する
 	*
-	* @return 新規の投稿
+	* @return 新規の投稿Post
 	*/
 	public static Post newPost() {
 		Post post = new Post();
@@ -26,7 +26,7 @@ public class PostFactory {
 	* 入力内容を設定した投稿を生成する
 	*
 	* @param post 投稿
-	* @return 投稿
+	* @return 投稿Post
 	*/
 	public static Post createPost(Post post) {
 		String id = UUID.randomUUID().toString();
@@ -41,7 +41,7 @@ public class PostFactory {
 	* 更新内容を設定した投稿を生成する
 	*
 	* @param post 投稿
-	* @return 投稿
+	* @return 投稿Post
 	*/
 	public static Post updatePost(Post post, Post form) {
 		post.setAuthor(form.getAuthor());
@@ -56,7 +56,7 @@ public class PostFactory {
 	* 削除内容を設定した投稿を生成する
 	*
 	* @param post 投稿
-	* @return 投稿
+	* @return 投稿Post
 	*/
 	public static Post deletePost(Post post) {
 		post.setDeleted(true);
